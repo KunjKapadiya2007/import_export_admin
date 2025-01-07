@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/category/category.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/products/allProduct.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/products/product.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/categoryCall.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/products.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/global/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/global/navbar.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/component/slider/addslider.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/pages/slider.jsx" afterDir="false" />
@@ -49,6 +57,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\project\\import_export_admin\\node_modules\\typescript\\lib&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\import_export_admin\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -69,6 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736153153719</updated>
       <workItem from="1736153162557" duration="3689000" />
+      <workItem from="1736160930194" duration="10651000" />
+      <workItem from="1736220199447" duration="19877000" />
       <workItem from="1736157320134" duration="5626000" />
       <workItem from="1736163214658" duration="5178000" />
       <workItem from="1736220152865" duration="9817000" />
