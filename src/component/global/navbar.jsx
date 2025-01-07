@@ -32,9 +32,10 @@ const Navbar = () => {
 
     const navLinks = [
         {label: "slider", href: "/slider"},
-        {label: "Products", href:"/product"},
+        {label: "Products", href:"/allproduct"},
         {label: "Contact", href: "/contact"},
         {label: "AddTestimonial", href: "/testimonial"},
+        {label: "Category", href: "/category"},
     ];
 
     return (

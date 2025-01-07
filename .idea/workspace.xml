@@ -5,6 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="Testimonial" />
+    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/category/category.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/products/allProduct.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/products/product.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/categoryCall.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/products.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/global/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/global/navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/slider/addslider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +38,7 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/KunjKapadiya2007/import_export_admin.git&quot;,
     &quot;accountId&quot;: &quot;bba9970a-fe84-4952-b61a-20334b792dc8&quot;
+    &quot;accountId&quot;: &quot;31aa92f4-dc6f-4587-8405-858c5108479f&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -33,6 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\project\\import_export_admin\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\import_export_admin\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -71,6 +100,11 @@
       <workItem from="1736227537523" duration="78000" />
       <workItem from="1736228404973" duration="85000" />
       <workItem from="1736230174384" duration="5203000" />
+      <workItem from="1736160930194" duration="10651000" />
+      <workItem from="1736220199447" duration="19877000" />
+      <workItem from="1736157320134" duration="5626000" />
+      <workItem from="1736163214658" duration="5178000" />
+      <workItem from="1736220152865" duration="9817000" />
     </task>
     <task id="LOCAL-00001" summary="Testimonial">
       <option name="closed" value="true" />
