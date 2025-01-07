@@ -34,6 +34,7 @@ const Navbar = () => {
         {label: "slider", href: "/slider"},
         {label: "Products", href:"/allproduct"},
         {label: "Contact", href: "/contact"},
+        {label: "AddTestimonial", href: "/testimonial"},
         {label: "Category", href: "/category"},
     ];
 
