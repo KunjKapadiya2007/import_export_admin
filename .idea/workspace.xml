@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="product crud">
+    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="mini changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/contact/contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/slider/addpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +49,15 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "D:\\project\\import_export_admin\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\Projects\\import_export_admin\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\import_export_admin\src\pages" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -95,6 +101,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="product crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="product crud" />
+    <MESSAGE value="mini changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini changes" />
   </component>
 </project>

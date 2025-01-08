@@ -103,11 +103,11 @@ function Addpage() {
                                     <TableCell>
                                         <Button
                                             variant="contained"
-                                            color="warning"
+                                            color="success"
                                             onClick={() => handleEdit(item._id)}
                                             sx={{
                                                 marginRight: 1,
-                                                '&:hover': {backgroundColor: '#ff9800'},
+                                                '&:hover': {backgroundColor: 'darkgreen'},
                                             }}
                                         >
                                             <ModeEditIcon/>
