@@ -145,7 +145,7 @@ function Addpage() {
                                         <Button
                                             variant="contained"
                                             color="success"
-                                            onClick={() => handleEditClick(item._id)}
+                                            onClick={() => handleEditClick(item)}
                                             sx={{
                                                 marginRight: 1,
                                                 '&:hover': {backgroundColor: 'darkgreen'},
