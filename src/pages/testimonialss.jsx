@@ -1,8 +1,8 @@
 import React from 'react';
 import {Box} from "@mui/material";
 import {Route, Routes} from "react-router-dom";
-import AddTestimonial from "../contact/addtestimonial";
-import Testimonial from "../contact/testimonial";
+import AddTestimonial from "../component/contact/addtestimonial";
+import Testimonial from "../component/contact/testimonial";
 
 function Testimonialss(props) {
     return (
