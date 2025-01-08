@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="addpage crud">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/category/category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/category/category.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/addtestimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/addtestimonial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/products/allProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/products/allProduct.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/products/product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/products/product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/slider/addpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/testimonialss.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/testimonialss.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,6 +110,6 @@
     <MESSAGE value="product crud" />
     <MESSAGE value="products" />
     <MESSAGE value="addpage crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="addpage crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
