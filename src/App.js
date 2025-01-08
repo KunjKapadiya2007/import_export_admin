@@ -11,7 +11,7 @@ function App() {
         <>
             <Navbar/>
             <Contactss/>
-            <Testimonialss/>
+            {/*<Testimonialss/>*/}
             <Slider/>
             <Products/>
             <CategoryCall/>

@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="Testimonial" />
-    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/category/category.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/products/allProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/products/product.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/categoryCall.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/products.jsx" afterDir="false" />
+    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="product crud">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/global/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/global/navbar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/slider/addslider.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/slider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/slider.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +26,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/KunjKapadiya2007/import_export_admin.git&quot;,
-    &quot;accountId&quot;: &quot;bba9970a-fe84-4952-b61a-20334b792dc8&quot;
-    &quot;accountId&quot;: &quot;31aa92f4-dc6f-4587-8405-858c5108479f&quot;
+    &quot;accountId&quot;: &quot;495e9b71-7894-4cff-bfcc-123af4d81611&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -49,19 +37,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\project\\import_export_admin\\node_modules\\typescript\\lib&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\import_export_admin\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -73,7 +48,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "D:\\Projects\\import_export_admin\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\project\\import_export_admin\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,35 +68,33 @@
       <option name="presentableId" value="Default" />
       <updated>1736153153719</updated>
       <workItem from="1736153162557" duration="3689000" />
-      <workItem from="1736157325475" duration="10026000" />
-      <workItem from="1736171740621" duration="166000" />
-      <workItem from="1736220246410" duration="6049000" />
-      <workItem from="1736226545123" duration="182000" />
-      <workItem from="1736227537523" duration="78000" />
-      <workItem from="1736228404973" duration="85000" />
-      <workItem from="1736230174384" duration="5203000" />
       <workItem from="1736160930194" duration="10651000" />
-      <workItem from="1736220199447" duration="19877000" />
-      <workItem from="1736157320134" duration="5626000" />
-      <workItem from="1736163214658" duration="5178000" />
-      <workItem from="1736220152865" duration="9817000" />
+      <workItem from="1736220199447" duration="24036000" />
     </task>
-    <task id="LOCAL-00001" summary="Testimonial">
+    <task id="LOCAL-00001" summary="product crud">
       <option name="closed" value="true" />
-      <created>1736247237069</created>
+      <created>1736247143864</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1736247237069</updated>
+      <updated>1736247143864</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="product crud">
+      <option name="closed" value="true" />
+      <created>1736247979914</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736247979914</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testimonial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testimonial" />
+    <MESSAGE value="product crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="product crud" />
   </component>
 </project>

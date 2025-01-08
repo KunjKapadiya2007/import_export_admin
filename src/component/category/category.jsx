@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {
     Box,
     Button,
@@ -13,19 +13,28 @@ import {
     TableRow,
     TextField,
     Typography,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
 } from "@mui/material";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import SaveIcon from "@mui/icons-material/Save";
 import axios from "axios";
+import img from "../../assets/images/product/upload_area1.svg";
 
 function Category() {
     const [category, setCategory] = useState("");
+    const [file, setFile] = useState(null);
+    const [preview, setPreview] = useState(null);
     const [data, setData] = useState([]);
     const [editingId, setEditingId] = useState(null);
     const [editingValue, setEditingValue] = useState("");
+    const [editingFile, setEditingFile] = useState(null);
+    const [editingPreview, setEditingPreview] = useState(null);
+    const [openDialog, setOpenDialog] = useState(false);
 
-    // Fetch categories from backend
     useEffect(() => {
         axios
             .get("https://import-export-be.onrender.com/api/category")
@@ -38,11 +47,20 @@ function Category() {
             alert("Category cannot be empty");
             return;
         }
+
+        const formData = new FormData();
+        formData.append("name", category);
+        if (file) formData.append("image", file);
+
         axios
-            .post("https://import-export-be.onrender.com/api/category", { name: category })
+            .post("https://import-export-be.onrender.com/api/category", formData, {
+                headers: {"Content-Type": "multipart/form-data"},
+            })
             .then((res) => {
-                setData((prevData) => [...prevData, res.data]); // Append new category to table
-                setCategory(""); // Clear input field
+                setData((prevData) => [...prevData, res.data]);
+                setCategory("");
+                setFile(null);
+                setPreview(null);
             })
             .catch((err) => console.error(err));
     };
@@ -51,72 +69,115 @@ function Category() {
         axios
             .delete(`https://import-export-be.onrender.com/api/category/${id}`)
             .then(() => {
-                setData((prevData) => prevData.filter((item) => item._id !== id)); // Update table
+                setData((prevData) => prevData.filter((item) => item._id !== id));
             })
             .catch((err) => console.error(err));
     };
 
-    const handleEdit = (id, name) => {
+    const handleEdit = (id, name, image) => {
         setEditingId(id);
         setEditingValue(name);
+        setEditingFile(null);
+        setEditingPreview(image);
+        setOpenDialog(true); // Open dialog
     };
 
-    const handleSave = (id) => {
+    const handleSave = () => {
         if (!editingValue.trim()) {
             alert("Category name cannot be empty");
             return;
         }
+
+        const formData = new FormData();
+        formData.append("name", editingValue);
+        if (editingFile) formData.append("image", editingFile);
+
         axios
-            .put(`https://import-export-be.onrender.com/api/category/${id}`, { name: editingValue })
+            .put(`https://import-export-be.onrender.com/api/category/${editingId}`, formData, {
+                headers: {"Content-Type": "multipart/form-data"},
+            })
             .then((res) => {
                 setData((prevData) =>
                     prevData.map((item) =>
-                        item._id === id ? { ...item, name: res.data.name } : item
+                        item._id === editingId ? {...item, name: res.data.name, image: res.data.image} : item
                     )
                 );
-                setEditingId(null);
-                setEditingValue("");
+                setOpenDialog(false); // Close dialog after saving
             })
             .catch((err) => console.error(err));
     };
 
-    const handleCategoryChange = (value) => {
-        setCategory(value);
+    const handleFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        setFile(selectedFile);
+        setPreview(URL.createObjectURL(selectedFile));
+    };
+
+    const handleEditingFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        setEditingFile(selectedFile);
+        setEditingPreview(URL.createObjectURL(selectedFile));
     };
 
     return (
         <Box>
             {/* Input Section */}
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    mt: 3,
-                }}
-            >
-                <Grid container spacing={2} justifyContent="center">
-                    <Grid item xs={12} sm={6}>
-                        <Box sx={{ display: "flex", alignItems: "center" }}>
-                            <Typography
-                                variant="h6"
-                                sx={{ fontWeight: "bold", color: "#2B545A", mr: 2, textWrap: "nowrap" }}
-                            >
-                                Category :-
+            <Container>
+                <Box sx={{mt: 3}}>
+                    <Grid container spacing={2} justifyContent="center">
+                        <Grid item xs={12}>
+                            <Typography variant="h6" sx={{fontWeight: "bold", color: "#2B545A", mr: 2}}>
+                                Category:
                             </Typography>
                             <TextField
                                 label="Enter Category"
                                 variant="outlined"
                                 fullWidth
                                 value={category}
-                                onChange={(e) => handleCategoryChange(e.target.value)}
+                                onChange={(e) => setCategory(e.target.value)}
                             />
-                        </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Typography variant="h6" sx={{fontWeight: "bold", color: "#2B545A"}}>
+                                Product Image:
+                            </Typography>
+                            <Box
+                                display="flex"
+                                alignItems="center"
+                                mt={2}
+                                sx={{
+                                    backgroundColor: "#f3f3f3",
+                                    borderRadius: 2,
+                                    p: 2,
+                                    border: "2px dashed #ccc",
+                                }}
+                            >
+                                <label htmlFor="product_images" style={{cursor: "pointer"}}>
+                                    <img
+                                        src={preview || img}
+                                        alt="Upload Preview"
+                                        style={{
+                                            height: 100,
+                                            objectFit: "cover",
+                                            borderRadius: 4,
+                                            marginRight: 10,
+                                        }}
+                                    />
+                                </label>
+                                <input
+                                    type="file"
+                                    id="product_images"
+                                    hidden
+                                    onChange={handleFileChange}
+                                />
+                            </Box>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Box>
+                </Box>
+            </Container>
 
             {/* Add Category Button */}
-            <Box sx={{ textAlign: "center", my: 4 }}>
+            <Box sx={{textAlign: "center", my: 4}}>
                 <button
                     style={{
                         padding: "12px 24px",
@@ -140,75 +201,66 @@ function Category() {
 
             {/* Table Section */}
             <Container>
-                <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
+                <TableContainer component={Paper} sx={{boxShadow: 3, borderRadius: 2}}>
                     <Table>
                         <TableHead>
-                            <TableRow sx={{ backgroundColor: "#f0f0f0" }}>
-                                <TableCell sx={{ fontWeight: "bold", color: "#244E54" }}>
+                            <TableRow sx={{backgroundColor: "#f0f0f0"}}>
+                                <TableCell sx={{fontWeight: "bold", color: "#244E54"}}>
                                     Sr No
                                 </TableCell>
-                                <TableCell sx={{ fontWeight: "bold", color: "#244E54" }}>
+                                <TableCell sx={{fontWeight: "bold", color: "#244E54"}}>
+                                    Image
+                                </TableCell>
+                                <TableCell sx={{fontWeight: "bold", color: "#244E54"}}>
                                     Category
                                 </TableCell>
-                                <TableCell sx={{ fontWeight: "bold", color: "#244E54" }}>
+                                <TableCell sx={{fontWeight: "bold", color: "#244E54"}}>
                                     Action
                                 </TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {data.map((item, index) => (
-                                <TableRow
-                                    key={item._id}
-                                    sx={{ "&:hover": { backgroundColor: "#f5f5f5" } }}
-                                >
+                                <TableRow key={item._id} sx={{"&:hover": {backgroundColor: "#f5f5f5"}}}>
                                     <TableCell>{index + 1}</TableCell>
                                     <TableCell>
-                                        {editingId === item._id ? (
-                                            <TextField
-                                                value={editingValue}
-                                                onChange={(e) => setEditingValue(e.target.value)}
-                                                fullWidth
-                                                variant="outlined"
+                                        {item.image ? (
+                                            <img
+                                                src={item.image}
+                                                alt="Category"
+                                                style={{
+                                                    width: 100,
+                                                    objectFit: "cover",
+                                                    borderRadius: 4,
+                                                }}
                                             />
                                         ) : (
-                                            item.name
+                                            "Image not found"
                                         )}
                                     </TableCell>
+
+                                    <TableCell>{item.name}</TableCell>
                                     <TableCell>
-                                        {editingId === item._id ? (
-                                            <Button
-                                                variant="contained"
-                                                color="success"
-                                                onClick={() => handleSave(item._id)}
-                                                sx={{
-                                                    "&:hover": { backgroundColor: "darkgreen" },
-                                                    marginRight: 1,
-                                                }}
-                                            >
-                                                <SaveIcon />
-                                            </Button>
-                                        ) : (
-                                            <Button
-                                                variant="contained"
-                                                color="success"
-                                                onClick={() => handleEdit(item._id, item.name)}
-                                                sx={{
-                                                    "&:hover": { backgroundColor: "darkgreen" },
-                                                    marginRight: 1,
-                                                }}
-                                            >
-                                                <ModeEditIcon />
-                                            </Button>
-                                        )}
+                                        <Button
+                                            variant="contained"
+                                            color="success"
+                                            onClick={() => handleEdit(item._id, item.name, item.image)}
+                                            sx={{
+                                                "&:hover": {backgroundColor: "darkgreen"},
+                                                marginRight: 1,
+                                            }}
+                                        >
+                                            <ModeEditIcon/>
+                                        </Button>
                                         <Button
                                             variant="contained"
                                             color="error"
                                             onClick={() => handleDelete(item._id)}
                                             sx={{
-                                                "&:hover": { backgroundColor: "#f44336" },
+                                                "&:hover": {backgroundColor: "#f44336"},
                                             }}
                                         >
-                                            <DeleteForeverIcon />
+                                            <DeleteForeverIcon/>
                                         </Button>
                                     </TableCell>
                                 </TableRow>
@@ -217,6 +269,73 @@ function Category() {
                     </Table>
                 </TableContainer>
             </Container>
+
+            {/* Dialog for Editing Category */}
+            <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
+                <DialogTitle>Edit Category</DialogTitle>
+                <DialogContent sx={{width: '300px'}}>
+                    <Box sx={{display: "flex", flexDirection: "column", gap: 2}}>
+                        <TextField
+                            label="Category Name"
+                            fullWidth
+                            variant="outlined"
+                            value={editingValue}
+                            onChange={(e) => setEditingValue(e.target.value)}
+                            sx={{backgroundColor: "#fff", borderRadius: 1}}
+                        />
+                        <Box>
+                            <Typography variant="h6" sx={{mb: 1}}>Category Image:</Typography>
+                            <Box
+                                display="flex"
+                                alignItems="center"
+                                sx={{
+                                    backgroundColor: "#f3f3f3",
+                                    borderRadius: 2,
+                                    p: 2,
+                                    border: "2px dashed #ccc",
+                                    overflow: "hidden",  // To prevent image overflow
+                                    transition: "all 0.3s ease",  // Smooth transition
+                                    "&:hover": {
+                                        borderColor: "#000",  // Change border color on hover
+                                    },
+                                }}
+                            >
+                                <label htmlFor="edit_product_images" style={{cursor: "pointer", display: "block"}}>
+                                    <img
+                                        src={editingPreview || img}
+                                        alt="Upload Preview"
+                                        style={{
+                                            // height: 100,
+                                            width: 200,
+                                            objectFit: "cover",
+                                            borderRadius: 4,
+                                            marginRight: 10,
+                                            transition: "transform 0.3s ease",  // Smooth zoom effect
+                                        }}
+                                        onMouseEnter={(e) => e.target.style.transform = "scale(1.05)"}
+                                        onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+                                    />
+                                </label>
+                                <input
+                                    type="file"
+                                    id="edit_product_images"
+                                    hidden
+                                    onChange={handleEditingFileChange}
+                                />
+                            </Box>
+                        </Box>
+                    </Box>
+                </DialogContent>
+                <DialogActions sx={{justifyContent: "flex-end"}}>
+                    <Button onClick={() => setOpenDialog(false)} color="secondary">
+                        Cancel
+                    </Button>
+                    <Button onClick={handleSave} color="primary">
+                        Save
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
         </Box>
     );
 }
