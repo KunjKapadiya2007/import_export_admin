@@ -171,7 +171,7 @@ function Addpage() {
                 </TableContainer>
             </Container>
 
-            {/* Modal for editing */}
+
             <Dialog open={open} onClose={() => setOpen(false)} maxWidth="sm" fullWidth>
                 <DialogTitle>Edit Slider</DialogTitle>
                 <DialogContent>

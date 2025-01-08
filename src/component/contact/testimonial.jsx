@@ -22,7 +22,7 @@ function Testimonial(props) {
     const navigate = useNavigate();
 
     const handleAddTestimonial = () => {
-        navigate("/add-testimonial");  // Navigate to the Add Testimonialss page
+        navigate("/add-testimonial");
     };
     useEffect(() => {
         alluser();
@@ -43,7 +43,7 @@ function Testimonial(props) {
     }
 
     const handleEdit = (id) => {
-        navigate(`/edit/${id}`);
+        navigate(`/testimonial/edit/${id}`);
     };
     return (
         <Box>
@@ -116,7 +116,7 @@ function Testimonial(props) {
                                                     textOverflow: "ellipsis",
                                                     overflow: "hidden",
                                                     whiteSpace: "nowrap",
-                                                    maxWidth: "200px", // Set the maximum width for the ellipsis effect
+                                                    maxWidth: "200px",
                                                 }}
                                             >
                                                 {item.description}

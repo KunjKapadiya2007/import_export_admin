@@ -50,7 +50,7 @@ function AllProduct() {
                     gutterBottom
                     sx={{color: '#2b545a', fontWeight: 'bold',textTransform:"uppercase"}}
                 >
-                    Product Slider
+                    Product
                 </Typography>
                 <Box sx={{display: 'flex', justifyContent: 'end'}}>
                     <Box
