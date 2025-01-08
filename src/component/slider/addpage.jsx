@@ -24,10 +24,10 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
 function Addpage() {
     const [data, setData] = useState([]);
-    const [open, setOpen] = useState(false); // State to manage modal visibility
-    const [currentItem, setCurrentItem] = useState(null); // State to store the current item for editing
-    const [editedTitle, setEditedTitle] = useState(""); // State to manage the edited title
-    const [editedImage, setEditedImage] = useState(null); // State to manage the edited image
+    const [open, setOpen] = useState(false);
+    const [currentItem, setCurrentItem] = useState(null);
+    const [editedTitle, setEditedTitle] = useState("");
+    const [editedImage, setEditedImage] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -50,8 +50,8 @@ function Addpage() {
 
     const handleEditClick = (item) => {
         setCurrentItem(item);
-        setEditedTitle(item.title); // Set the initial title
-        setEditedImage(item.image); // Set the initial image
+        setEditedTitle(item.title);
+        setEditedImage(item.image);
         setOpen(true);
     };
 

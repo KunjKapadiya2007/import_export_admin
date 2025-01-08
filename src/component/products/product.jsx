@@ -9,7 +9,6 @@ function Product() {
         formData, setFormData] = useState({
         product_images: null,
         backgroundImage: null,
-        isMainProduct: false,
         fields: [
             { id: 1, label: "Product Title", value: "", name: "title" },
             { id: 2, label: "Product Subtitle", value: "", name: "subtitle" },
@@ -38,7 +37,7 @@ function Product() {
             axios
                 .get(`https://import-export-be.onrender.com/api/product/${id}`)
                 .then((res) => {
-                    const { title, image, subtitle, other_info, category } = res.data;
+                    const { title, image, subtitle, other_info, category , backgroundImage } = res.data;
                     setFormData((prev) => ({
                         ...prev,
                         fields: prev.fields.map((field) => ({
@@ -55,6 +54,7 @@ function Product() {
                                                 : field.value,
                         })),
                         product_images: image || null,
+                        backgroundImage: backgroundImage || null,
                     }));
                 })
                 .catch((err) => {
@@ -62,7 +62,6 @@ function Product() {
                 });
         }
     }, [id]);
-    console.log(formData,"jgggggggggggggggggggggggggggggggggggjjjjjjjjjjjj")
     const handleFileChange = (e, key) => {
         const file = e.target.files[0];
         if (file && file.type.startsWith("image/")) {
@@ -74,16 +73,6 @@ function Product() {
                 [key]: "Invalid file type. Only images are allowed.",
             }));
         }
-    };
-
-    const handleToggle = (e) => {
-        const isChecked = e.target.checked;
-        setFormData((prev) => ({
-            ...prev,
-            isMainProduct: isChecked,
-            ...(isChecked ? {} : { backgroundImage: null }),
-        }));
-        if (!isChecked) setErrors((prev) => ({ ...prev, backgroundImage: "" }));
     };
 
     const handleInputChange = (id, value, fieldName) => {
@@ -107,7 +96,7 @@ function Product() {
 
     const validateForm = () => {
         const newErrors = {};
-        if (formData.isMainProduct && !formData.backgroundImage) {
+        if (!formData.backgroundImage) {
             newErrors.backgroundImage = "Background Image is required when Main Product is enabled.";
         }
         setErrors(newErrors);
@@ -137,7 +126,6 @@ function Product() {
             fd.append("backgroundImage", formData.backgroundImage);
         }
 
-        fd.append("isMainProduct", formData.isMainProduct);
 
         const request = id
             ? axios.put(`https://import-export-be.onrender.com/api/product/${id}`, fd)
@@ -217,7 +205,6 @@ function Product() {
                         </Box>
                     </Grid>
 
-                    {formData.isMainProduct && (
                         <Grid item xs={12} sm={6}>
                             <Typography variant="h6" sx={{ fontWeight: "bold", color: "#2B545A" }}>
                                 Background Image:
@@ -236,9 +223,11 @@ function Product() {
                                 <label htmlFor="backgroundImage" style={{ cursor: "pointer" }}>
                                     <img
                                         src={
-                                            formData.backgroundImage
-                                                ? URL.createObjectURL(formData.backgroundImage)
-                                                : img
+                                            typeof formData?.backgroundImage === "string"
+                                            ? formData?.backgroundImage
+                                            : formData?.backgroundImage
+                                            ? URL.createObjectURL(formData?.backgroundImage)
+                                            : img
                                         }
                                         alt="Upload Preview"
                                         style={{
@@ -262,23 +251,22 @@ function Product() {
                                 </Typography>
                             )}
                         </Grid>
-                    )}
 
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h6" sx={{ fontWeight: "bold", pb: 2, color: "#2B545A" }}>
-                            Main Product:
-                        </Typography>
-                        <Switch
-                            checked={formData.isMainProduct}
-                            onChange={handleToggle}
-                            inputProps={{ "aria-label": "Main Product" }}
-                            sx={{
-                                "& .MuiSwitch-track": {
-                                    backgroundColor: formData.isMainProduct ? "#2B545A" : "#ccc",
-                                },
-                            }}
-                        />
-                    </Grid>
+                    {/*<Grid item xs={12} sm={6}>*/}
+                    {/*    <Typography variant="h6" sx={{ fontWeight: "bold", pb: 2, color: "#2B545A" }}>*/}
+                    {/*        Main Product:*/}
+                    {/*    </Typography>*/}
+                    {/*    <Switch*/}
+                    {/*        checked={formData.isMainProduct}*/}
+                    {/*        onChange={handleToggle}*/}
+                    {/*        inputProps={{ "aria-label": "Main Product" }}*/}
+                    {/*        sx={{*/}
+                    {/*            "& .MuiSwitch-track": {*/}
+                    {/*                backgroundColor: formData.isMainProduct ? "#2B545A" : "#ccc",*/}
+                    {/*            },*/}
+                    {/*        }}*/}
+                    {/*    />*/}
+                    {/*</Grid>*/}
 
                     {formData.fields.map((field) => {
                         if (field.name === "category") {
