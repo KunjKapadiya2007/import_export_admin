@@ -23,7 +23,7 @@ function AddUser() {
                 .get(`https://import-export-be.onrender.com/api/slider/${id}`)
                 .then((res) => {
                     setTitle(res.data.title);
-                    setImage(res.data.image);  // Assuming the response contains the image URL
+                    setImage(res.data.image);
                 })
                 .catch((err) => console.log(err));
         }
@@ -40,12 +40,12 @@ function AddUser() {
         if (id) {
             axios
                 .put(`https://import-export-be.onrender.com/api/slider/${id}`, fd)
-                .then(() => navigate('/slider')) // Navigate to CRUD page after successful update
+                .then(() => navigate('/slider'))
                 .catch((err) => console.log(err));
         } else {
             axios
                 .post('https://import-export-be.onrender.com/api/slider', fd)
-                .then(() => navigate('/slider')) // Navigate to CRUD page after successful submission
+                .then(() => navigate('/slider'))
                 .catch((err) => console.log(err));
         }
     }
