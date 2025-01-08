@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="addpage crud">
+    <list default="true" id="db55b577-eb31-415b-b7a7-febcd03e2f8e" name="Changes" comment="small changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/category/category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/category/category.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/addtestimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/addtestimonial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/contact/testimonial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/products/allProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/products/allProduct.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/products/product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/products/product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/slider/addpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/slider/addpage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/testimonialss.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/testimonialss.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/slider/addslider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/slider/addslider.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +69,7 @@
       <workItem from="1736153162557" duration="3689000" />
       <workItem from="1736160930194" duration="10651000" />
       <workItem from="1736220199447" duration="24815000" />
-      <workItem from="1736307035710" duration="1823000" />
+      <workItem from="1736307035710" duration="3262000" />
     </task>
     <task id="LOCAL-00001" summary="product crud">
       <option name="closed" value="true" />
@@ -111,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736308103723</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="small changes">
+      <option name="closed" value="true" />
+      <created>1736308913374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736308913374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +121,7 @@
     <MESSAGE value="product crud" />
     <MESSAGE value="products" />
     <MESSAGE value="addpage crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="addpage crud" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
   </component>
 </project>
