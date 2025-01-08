@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { TextField, Button, Container, Box, Typography } from '@mui/material';
 import img from '../../assets/images/slider/upload_area1.svg';
 
-function AddUser() {
+function Addslider() {
     const [image, setImage] = useState(null);
     const [title, setTitle] = useState('');
     const navigate = useNavigate();
@@ -154,4 +154,4 @@ function AddUser() {
     );
 }
 
-export default AddUser;
+export default Addslider;

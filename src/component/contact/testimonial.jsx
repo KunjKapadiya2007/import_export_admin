@@ -126,10 +126,10 @@ function Testimonial(props) {
                                             <Box sx={{ display: 'flex', gap: 1 }}>
                                                 <Button
                                                     variant="contained"
-                                                    color="warning"
+                                                    color="success"
                                                     onClick={() => handleEdit(item._id)}
                                                     sx={{
-                                                        '&:hover': { backgroundColor: '#ff9800' },
+                                                        '&:hover': { backgroundColor: 'darkgreen' },
                                                     }}
                                                 >
                                                     <ModeEditIcon />
