@@ -10,7 +10,7 @@ function Testimonialss(props) {
             <Routes>
                 <Route path="/testimonial" element={<Testimonial/>} />
                 <Route path="/add-testimonial" element={<AddTestimonial />} />
-                <Route path="/edit/:id" element={<AddTestimonial />} />
+                <Route path="/testimonial/edit/:id" element={<AddTestimonial />} />
             </Routes>
         </Box>
     );

@@ -79,7 +79,7 @@ function Category() {
         setEditingValue(name);
         setEditingFile(null);
         setEditingPreview(image);
-        setOpenDialog(true); // Open dialog
+        setOpenDialog(true);
     };
 
     const handleSave = () => {
@@ -102,7 +102,7 @@ function Category() {
                         item._id === editingId ? {...item, name: res.data.name, image: res.data.image} : item
                     )
                 );
-                setOpenDialog(false); // Close dialog after saving
+                setOpenDialog(false);
             })
             .catch((err) => console.error(err));
     };
@@ -121,9 +121,17 @@ function Category() {
 
     return (
         <Box>
-            {/* Input Section */}
+
             <Container>
                 <Box sx={{mt: 3}}>
+                    <Typography
+                        variant="h4"
+                        align="center"
+                        gutterBottom
+                        sx={{color: '#2b545a', fontWeight: 'bold', textTransform: "uppercase"}}
+                    >
+                        category
+                    </Typography>
                     <Grid container spacing={2} justifyContent="center">
                         <Grid item xs={12}>
                             <Typography variant="h6" sx={{fontWeight: "bold", color: "#2B545A", mr: 2}}>
@@ -176,7 +184,7 @@ function Category() {
                 </Box>
             </Container>
 
-            {/* Add Category Button */}
+
             <Box sx={{textAlign: "center", my: 4}}>
                 <button
                     style={{
@@ -199,7 +207,7 @@ function Category() {
                 </button>
             </Box>
 
-            {/* Table Section */}
+
             <Container>
                 <TableContainer component={Paper} sx={{boxShadow: 3, borderRadius: 2}}>
                     <Table>
@@ -270,7 +278,6 @@ function Category() {
                 </TableContainer>
             </Container>
 
-            {/* Dialog for Editing Category */}
             <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
                 <DialogTitle>Edit Category</DialogTitle>
                 <DialogContent sx={{width: '300px'}}>
@@ -293,10 +300,10 @@ function Category() {
                                     borderRadius: 2,
                                     p: 2,
                                     border: "2px dashed #ccc",
-                                    overflow: "hidden",  // To prevent image overflow
-                                    transition: "all 0.3s ease",  // Smooth transition
+                                    overflow: "hidden",
+                                    transition: "all 0.3s ease",
                                     "&:hover": {
-                                        borderColor: "#000",  // Change border color on hover
+                                        borderColor: "#000",
                                     },
                                 }}
                             >
@@ -305,12 +312,12 @@ function Category() {
                                         src={editingPreview || img}
                                         alt="Upload Preview"
                                         style={{
-                                            // height: 100,
+
                                             width: 200,
                                             objectFit: "cover",
                                             borderRadius: 4,
                                             marginRight: 10,
-                                            transition: "transform 0.3s ease",  // Smooth zoom effect
+                                            transition: "transform 0.3s ease",
                                         }}
                                         onMouseEnter={(e) => e.target.style.transform = "scale(1.05)"}
                                         onMouseLeave={(e) => e.target.style.transform = "scale(1)"}

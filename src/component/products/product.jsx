@@ -51,7 +51,7 @@ function Product() {
                                         : field.name === "other_info"
                                             ? other_info || { description1: "", description2: "" }
                                             : field.name === "category"
-                                                ? category._id // Store the category id
+                                                ? category._id
                                                 : field.value,
                         })),
                         product_images: image || null,
@@ -81,7 +81,7 @@ function Product() {
         setFormData((prev) => ({
             ...prev,
             isMainProduct: isChecked,
-            ...(isChecked ? {} : { backgroundImage: null }), // Reset backgroundImage when toggle is off
+            ...(isChecked ? {} : { backgroundImage: null }),
         }));
         if (!isChecked) setErrors((prev) => ({ ...prev, backgroundImage: "" }));
     };
@@ -123,7 +123,7 @@ function Product() {
             if (field.name === "other_info") {
                 fd.append("other_info", JSON.stringify(field.value));
             } else if (field.name === "category") {
-                fd.append("category", field.value); // Send the category id
+                fd.append("category", field.value);
             } else {
                 fd.append(field.name, field.value);
             }
@@ -292,11 +292,11 @@ function Product() {
                                         fullWidth
                                         label={`Select ${field.label}`}
                                         variant="outlined"
-                                        value={field.value} // This will now be the category id
+                                        value={field.value}
                                         onChange={(e) => handleInputChange(field.id, e.target.value)}
                                     >
                                         {categories.map((category) => (
-                                            <MenuItem key={category._id} value={category._id}> {/* Use category._id */}
+                                            <MenuItem key={category._id} value={category._id}>
                                                 {category.name}
                                             </MenuItem>
                                         ))}

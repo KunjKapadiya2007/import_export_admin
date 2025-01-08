@@ -6,8 +6,6 @@ import {Route, Routes} from "react-router-dom";
 function Products(props) {
     return (
         <>
-            {/*<AllProduct/>*/}
-            {/*<Product/>*/}
             <Routes>
                 <Route path={'/allproduct'} element={<AllProduct/>}/>
                 <Route path={'/product'} element={<Product/>}/>

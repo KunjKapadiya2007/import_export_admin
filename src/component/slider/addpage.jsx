@@ -10,13 +10,24 @@ import {
     TableHead,
     TableRow,
     Paper,
-    Typography, Box, Container,
+    Typography,
+    Box,
+    Container,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    TextField
 } from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
 function Addpage() {
     const [data, setData] = useState([]);
+    const [open, setOpen] = useState(false); // State to manage modal visibility
+    const [currentItem, setCurrentItem] = useState(null); // State to store the current item for editing
+    const [editedTitle, setEditedTitle] = useState(""); // State to manage the edited title
+    const [editedImage, setEditedImage] = useState(null); // State to manage the edited image
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -37,8 +48,38 @@ function Addpage() {
             .catch((err) => console.log(err));
     }
 
-    const handleEdit = (id) => {
-        navigate(`/edit/${id}`);
+    const handleEditClick = (item) => {
+        setCurrentItem(item);
+        setEditedTitle(item.title); // Set the initial title
+        setEditedImage(item.image); // Set the initial image
+        setOpen(true);
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setEditedImage(file);
+        }
+    };
+
+    const handleEditSave = async () => {
+        const formData = new FormData();
+        formData.append("title", editedTitle);
+        if (editedImage instanceof File) {
+            formData.append("image", editedImage);
+        }
+
+        try {
+            await axios.put(
+                `https://import-export-be.onrender.com/api/slider/${currentItem._id}`,
+                formData,
+                {headers: {"Content-Type": "multipart/form-data"}}
+            );
+            alluser();
+            setOpen(false);
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (
@@ -48,7 +89,7 @@ function Addpage() {
                     variant="h4"
                     align="center"
                     gutterBottom
-                    sx={{color: '#2b545a', fontWeight: 'bold',textTransform:"uppercase"}}
+                    sx={{color: '#2b545a', fontWeight: 'bold', textTransform: "uppercase"}}
                 >
                     Product Slider
                 </Typography>
@@ -58,19 +99,19 @@ function Addpage() {
                         color="primary"
                         onClick={() => navigate('/addslider')}
                         sx={{
-                                padding: "12px 24px",
-                                borderRadius: 3,
-                                border: "none",
-                                mb:5,
-                                background: "#2B545A",
-                                color: "#fff",
-                                fontSize: "1rem",
-                                fontWeight: "bold",
-                                textTransform: "uppercase",
-                                cursor: "pointer",
-                                "&:hover": {
-                                    background: "#244e54"
-                                }
+                            padding: "12px 24px",
+                            borderRadius: 3,
+                            border: "none",
+                            mb: 5,
+                            background: "#2B545A",
+                            color: "#fff",
+                            fontSize: "1rem",
+                            fontWeight: "bold",
+                            textTransform: "uppercase",
+                            cursor: "pointer",
+                            "&:hover": {
+                                background: "#244e54"
+                            }
                         }}
                     >
                         Add User
@@ -104,7 +145,7 @@ function Addpage() {
                                         <Button
                                             variant="contained"
                                             color="success"
-                                            onClick={() => handleEdit(item._id)}
+                                            onClick={() => handleEditClick(item._id)}
                                             sx={{
                                                 marginRight: 1,
                                                 '&:hover': {backgroundColor: 'darkgreen'},
@@ -129,6 +170,48 @@ function Addpage() {
                     </Table>
                 </TableContainer>
             </Container>
+
+
+            <Dialog open={open} onClose={() => setOpen(false)} maxWidth="sm" fullWidth>
+                <DialogTitle>Edit Slider</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        fullWidth
+                        label="Title"
+                        value={editedTitle}
+                        onChange={(e) => setEditedTitle(e.target.value)}
+                        margin="normal"
+                    />
+                    <Typography variant="body1" sx={{marginTop: 2}}>Current Image:</Typography>
+                    <img
+                        src={currentItem?.image}
+                        alt="Current slider"
+                        width="100%"
+                        style={{borderRadius: '8px', marginBottom: '1rem'}}
+                    />
+                    <Button
+                        variant="contained"
+                        component="label"
+                        sx={{marginBottom: 2}}
+                    >
+                        Upload New Image
+                        <input
+                            type="file"
+                            hidden
+                            onChange={handleImageChange}
+                            accept="image/*"
+                        />
+                    </Button>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setOpen(false)} color="secondary">
+                        Cancel
+                    </Button>
+                    <Button onClick={handleEditSave} color="primary" variant="contained">
+                        Save
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

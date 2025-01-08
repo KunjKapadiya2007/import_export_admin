@@ -9,21 +9,21 @@ function AddTestimonial() {
     const [name, setName] = useState("");
     const [role, setRole] = useState("");
     const [description, setDescription] = useState("");
-    const [loading, setLoading] = useState(false); // For handling loading state
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const { id } = useParams(); // Get the testimonial ID from the URL
+    const { id } = useParams();
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setImage(file); // Set the selected file
+            setImage(file);
         }
     };
 
     useEffect(() => {
-        // If editing, fetch testimonial data
+
         if (id) {
-            setLoading(true); // Set loading to true while data is being fetched
+            setLoading(true);
             axios
                 .get(`https://import-export-be.onrender.com/api/testimonial/${id}`)
                 .then((res) => {
@@ -31,10 +31,10 @@ function AddTestimonial() {
                     setName(data.name || "");
                     setRole(data.role || "");
                     setDescription(data.description || "");
-                    setImage(data.image || null); // Use the image URL for display
+                    setImage(data.image || null);
                 })
                 .catch((err) => console.error("Error fetching testimonial data:", err))
-                .finally(() => setLoading(false)); // Ensure loading is set to false
+                .finally(() => setLoading(false));
         }
     }, [id]);
 
@@ -51,13 +51,13 @@ function AddTestimonial() {
         fd.append("role", role);
         fd.append("description", description);
 
-        // Append file only if a new image is uploaded
+
         if (typeof image !== "string") {
             fd.append("image", image);
         }
 
         if (id) {
-            // Update the testimonial
+
             axios
                 .put(`https://import-export-be.onrender.com/api/testimonial/${id}`, fd)
                 .then((response) => {
@@ -66,7 +66,7 @@ function AddTestimonial() {
                 })
                 .catch((err) => console.error("Error updating testimonial:", err));
         } else {
-            // Add a new testimonial
+
             axios
                 .post("https://import-export-be.onrender.com/api/testimonial", fd)
                 .then((response) => {

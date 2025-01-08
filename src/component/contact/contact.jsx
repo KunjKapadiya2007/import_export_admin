@@ -38,7 +38,6 @@ function Contact() {
         getData();
     }, []);
 
-    // Handle delete operation
     const handleDelete = async (id) => {
         try {
             await axios.delete(`https://import-export-be.onrender.com/api/contacts/${id}`);
