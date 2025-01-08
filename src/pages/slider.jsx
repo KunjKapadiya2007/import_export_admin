@@ -9,7 +9,7 @@ function Slider(props) {
             <Routes>
                 <Route path="/slider" element={<Addpage/>} />
                 <Route path="/addslider" element={<Addslider />} />
-                {/*<Route path="/edit/:id" element={<Addslider />} />*/}
+                <Route path="/edit/:id" element={<Addslider />} />
             </Routes>
         </>
     );
